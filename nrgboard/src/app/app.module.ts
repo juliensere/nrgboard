@@ -16,7 +16,9 @@ import { ImportComponent } from './import/import.component';
 import { firebaseConfiguration } from '../environments/firebase';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  ErrorStateMatcher, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatListModule, MatSelectModule,
+  ErrorStateMatcher, MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+  MatMenuModule,
+  MatSelectModule,
   MatToolbarModule, ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
@@ -54,10 +56,13 @@ import {environment} from '../environments/environment';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatMenuModule,
     MatCheckboxModule,
     MatListModule,
     MatToolbarModule,
     MatSelectModule,
+    MatCardModule,
+    MatIconModule,
   ],
   providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]
