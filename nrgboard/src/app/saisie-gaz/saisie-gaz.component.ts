@@ -12,4 +12,8 @@ export class SaisieGazComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log('dfdffd');
+  }
+
 }

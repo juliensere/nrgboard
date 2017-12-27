@@ -13,16 +13,20 @@ import { HistoGazComponent } from './histo-gaz/histo-gaz.component';
 import { HistoElecComponent } from './histo-elec/histo-elec.component';
 import { ExportComponent } from './export/export.component';
 import { ImportComponent } from './import/import.component';
+import { firebaseConfiguration } from '../environments/firebase';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   ErrorStateMatcher, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatListModule, MatSelectModule,
   MatToolbarModule, ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
-import {RouterModule, Routes} from '@angular/router';
-import {ROUTES} from './routes';
 import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
@@ -50,7 +57,7 @@ import { HeaderComponent } from './header/header.component';
     MatCheckboxModule,
     MatListModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]

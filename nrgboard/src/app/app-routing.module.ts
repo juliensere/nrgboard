@@ -1,15 +1,25 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {Routes} from '@angular/router';
-import {HistoGazComponent} from './histo-gaz/histo-gaz.component';
-import {SaisieEauComponent} from './saisie-eau/saisie-eau.component';
 import {SaisieElecComponent} from './saisie-elec/saisie-elec.component';
+import {SaisieEauComponent} from './saisie-eau/saisie-eau.component';
+import {HistoGazComponent} from './histo-gaz/histo-gaz.component';
 import {SaisieGazComponent} from './saisie-gaz/saisie-gaz.component';
 
 export const ROUTES: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent },
   {path: 'saisie/gaz', component: SaisieGazComponent},
   {path: 'saisie/electricite', component: SaisieElecComponent},
   {path: 'saisie/eau', component: SaisieEauComponent},
   {path: 'histo/gaz', component: HistoGazComponent},
   {path: '**', redirectTo: ''},
 ];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(ROUTES) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule { }
+
+
