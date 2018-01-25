@@ -13,14 +13,7 @@ import { HistoGazComponent } from './histo-gaz/histo-gaz.component';
 import { HistoElecComponent } from './histo-elec/histo-elec.component';
 import { ExportComponent } from './export/export.component';
 import { ImportComponent } from './import/import.component';
-import { firebaseConfiguration } from '../environments/firebase';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  ErrorStateMatcher, MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
-  MatMenuModule,
-  MatSelectModule,
-  MatToolbarModule, ShowOnDirtyErrorStateMatcher
-} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -52,19 +45,9 @@ import {environment} from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatToolbarModule,
-    MatSelectModule,
-    MatCardModule,
-    MatIconModule,
+    BrowserAnimationsModule
   ],
-  providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

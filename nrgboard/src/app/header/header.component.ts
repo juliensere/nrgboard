@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  user: Observable<firebase.User | null>;
+
+  constructor(public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
+    this.user = this.afAuth.authState;
   }
 
 }
