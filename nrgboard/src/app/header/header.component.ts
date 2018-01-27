@@ -10,12 +10,16 @@ import {AngularFireAuth} from 'angularfire2/auth';
 })
 export class HeaderComponent implements OnInit {
 
-  user: Observable<firebase.User | null>;
+  user: firebase.User;
 
   constructor(public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
-    this.user = this.afAuth.authState;
+    this.afAuth.authState.subscribe(user => this.user = user);
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
 }

@@ -1,3 +1,5 @@
-<p>
-  histo-gaz works!
-</p>
+<ul>
+  <li *ngFor="let item of mesures | async">
+    {{ item.value }}
+  </li>
+</ul>

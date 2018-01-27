@@ -5,6 +5,7 @@ import {SaisieElecComponent} from './saisie-elec/saisie-elec.component';
 import {SaisieEauComponent} from './saisie-eau/saisie-eau.component';
 import {HistoGazComponent} from './histo-gaz/histo-gaz.component';
 import {SaisieGazComponent} from './saisie-gaz/saisie-gaz.component';
+import {ProfilComponent} from './profil/profil.component';
 
 export const ROUTES: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ export const ROUTES: Routes = [
   {path: 'saisie/gaz', component: SaisieGazComponent},
   {path: 'saisie/electricite', component: SaisieElecComponent},
   {path: 'saisie/eau', component: SaisieEauComponent},
-  {path: 'histo/gaz', component: HistoGazComponent},
+  {path: 'historique/gaz', component: HistoGazComponent},
+  {path: 'profil', component: ProfilComponent},
   {path: '**', redirectTo: ''},
 ];
 

@@ -1,9 +1,9 @@
 <div class="header-container">
   <ul>
-    <li><h1>NRG</h1></li>
-    <li>{{user.displayName | async}}</li>
+    <li *ngIf="user"><a routerLink="/profil"><img id="picture" [src]="user.photoURL"></a></li>
+    <li *ngIf="user==null">NP</li>
     <li><a routerLink="/saisie/gaz">Saisie</a></li>
-    <li><a routerLink="/histo/gaz">Données</a></li>
-    <li><a routerLink="/profil">Mon profil</a></li>
+    <li><a routerLink="/historique/gaz">Données</a></li>
+    <li *ngIf="user"><button (click)="logout()">Déconnexion</button></li>
   </ul>
 </div>

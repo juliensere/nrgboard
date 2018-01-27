@@ -3,39 +3,42 @@
     <div style="width: 100%">
       <div class="flex">
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(100000)">+</button>
+          <span class="value">{{getNumber6()}}</span>
+          <button (click)="decrement(100000)">-</button>
         </div>
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(10000)">+</button>
+          <span class="value">{{getNumber5()}}</span>
+          <button (click)="decrement(10000)">-</button>
         </div>
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(1000)">+</button>
+          <span class="value">{{getNumber4()}}</span>
+          <button (click)="decrement(1000)">-</button>
         </div>
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(100)">+</button>
+          <span class="value">{{getNumber3()}}</span>
+          <button (click)="decrement(100)">-</button>
         </div>
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(10)">+</button>
+          <span class="value">{{getNumber2()}}</span>
+          <button (click)="decrement(10)">-</button>
         </div>
         <div class="colonne">
-          <button>+</button>
-          <span class="value">5</span>
-          <button>-</button>
+          <button (click)="increment(1)">+</button>
+          <span class="value">{{getNumber1()}}</span>
+          <button (click)="decrement(1)">-</button>
         </div>
       </div>
     </div>
-    <div style="width: 100%">
-      <button mat-raised-button color="primary">Primary</button>
+    <br/>
+    <div class="flex">
+      <div class="colonne">
+        <button style="padding:8px">Enregistrer</button>
+      </div>
     </div>
   </form>
 </div>

@@ -20,8 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreModule} from 'angularfire2/firestore';
 import {environment} from '../environments/environment';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {environment} from '../environments/environment';
     ExportComponent,
     ImportComponent,
     HeaderComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import {environment} from '../environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AngularFireAuthModule,
     BrowserAnimationsModule
   ],

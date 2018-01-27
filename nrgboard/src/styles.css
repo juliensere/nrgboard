@@ -4,6 +4,11 @@ html {
   font-family: Helvetia;
 }
 
+button:active {
+  color:#ff6600 !important;
+  background-color: black !important;
+}
+
 a:link, a:visited, a:active {
   color:#fff;
 }

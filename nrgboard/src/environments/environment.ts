@@ -10,6 +10,7 @@ export const environment = {
     authDomain: "listecadeau-d0fd4.firebaseapp.com",
     databaseURL: "https://listecadeau-d0fd4.firebaseio.com",
     storageBucket: "listecadeau-d0fd4.appspot.com",
-    messagingSenderId: "130229680664"
+    messagingSenderId: "130229680664",
+    projectId: "listecadeau-d0fd4"
   }
 };

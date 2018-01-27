@@ -1,0 +1,10 @@
+<h1>Mon profil</h1>
+<div *ngIf="afAuth.authState | async; let user; else showLogin">
+  <div class="example-card">
+    <div>
+      <div>{{user.displayName}}</div>
+      <div>{{user.email}}</div>
+    </div>
+  </div>
+  <button (click)="logout()">Déconnexion</button>
+</div>

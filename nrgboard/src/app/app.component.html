@@ -1,18 +1,10 @@
 <app-header></app-header>
 <div class="basic-container">
-  <router-outlet></router-outlet>
   <div *ngIf="afAuth.authState | async; let user; else showLogin">
-    <div class="example-card">
-      <div>
-        <div>{{user.displayName}}</div>
-        <div>{{user.email}}</div>
-      </div>
-      <img [src]="user.photoURL" style="width:100%">
-    </div>
-    <button (click)="logout()">Logout</button>
+    <router-outlet></router-outlet>
   </div>
   <ng-template #showLogin>
-    <p>Please login.</p>
-    <button (click)="login()">Login with Google</button>
+    <p>Vous devez vous connectez pour utiliser NRG</p>
+    <button (click)="login()">Connexion avec Google</button>
   </ng-template>
 </div>
